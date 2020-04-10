@@ -1,0 +1,365 @@
+﻿
+@{
+    ViewData["Title"] = "Beneficiary";
+}
+
+@model List<KSquare.DMS.Domain.Models.BeneficiaryModel>
+@*<h1>Beneficiary</h1>*@
+
+@*<div class="content-wrapper">*@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Beneficiary</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">DataTables</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    @*<h3 class="card-title">DataTable with minimal features & hover style</h3>*@
+                    <button id="openModal" data-toggle="modal" data-target="modal-lg" type="button" class="btn btn-primary p-2"> Add Beneficiary </button>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-3" style="height: 600px;">
+                    @*<button type="button" class="btn btn-primary"> Add Beneficiary </button>*@
+                    <div></div>
+                    <table id="example2" class="dataTables_wrapper dt-bootstrap4 table table-head-fixed text-nowrap table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th class="d-none">Id</th>
+                                <th>Name</th>
+                                <th>CNIC</th>
+                                <th>Family Code</th>
+                                <th>Phone</th>
+                                <th>Town</th>
+                                <th>IsActive</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var beneficiary in @Model)
+                            {
+                                <tr>
+                                    <td class="d-none">@beneficiary.Id</td>
+                                    <td>@beneficiary.FirstName @beneficiary.LastName </td>
+                                    <td>@beneficiary.Cnic</td>
+                                    <td>@beneficiary.FamilyCode</td>
+                                    <td>@beneficiary.PhoneNumber</td>
+                                    <td>@beneficiary.Town</td>
+                                    <td>@beneficiary.IsActive</td>
+                                    <td>
+                                        <a id="edit" data-value="@beneficiary.Id"
+                                           href="javascript:void(0)" class="">Edit</a>
+                                        <a id="view" data-value="@beneficiary.Id"
+                                           href="javascript:void(0)" class="">View</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="modal fade" id="modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Beneficiary</h4>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form id="beneficiary-form">
+
+                    <div class="modal-body">
+
+
+
+                        <div class="row justify-content-center align-items-center">
+
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="firstname">Firstname</label>
+                                        <input type="text" class="form-control pretty-input" id="firstname" name="firstname">
+                                        <div class="invalid-feedback">Enter valid Name</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="lastname">Lastname</label>
+                                        <input type="text" class="form-control pretty-input" id="lastname" name="lastname">
+                                        <div class="invalid-feedback">Enter valid Name</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="username">Fathername</label>
+                                        <input type="text" class="form-control pretty-input" id="Fatherrname" name="Fatherrname">
+                                        <div class="invalid-feedback">Enter valid gather Name</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="username">CNIC</label>
+                                        <input type="number" class="form-control pretty-input" id="CNIC" name="CNIC">
+                                        <div class="invalid-feedback">Enter valid CNIC</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="familycode">CNIC Family Code</label>
+                                        <input type="text" class="form-control pretty-input" id="familycode" name="familycode">
+                                        <div class="invalid-feedback">Enter valid Family Code</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="gender">Gender</label>
+                                        <select class="form-control" id="gender" name="Gender">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                @*<div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="emailaddress">Email</label>
+                                            <input type="email" class="form-control pretty-input" id="emailaddress" name="firstname">
+                                            <div class="invalid-feedback">Enter valid Email</div>
+                                        </div>
+                                    </div>*@
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="Phoneno">Phone no</label>
+                                        <input type="tel" class="form-control pretty-input" id="phoneno" name="PhoneNumber">
+                                        <div class="invalid-feedback">Enter valid Phone no</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="address">Addess</label>
+                                        <input type="text" class="form-control pretty-input" id="address" name="Address">
+                                        <div class="invalid-feedback">Enter valid username</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="town">Town</label>
+                                        <select class="form-control" id="town" name="Town">
+                                            @*<option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>*@
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <select class="form-control" id="city" name="City">
+                                            @*<option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>*@
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="type">Type</label>
+                                        <select class="form-control" id="type" name="Type">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<button type="submit" class="customBtn">Save</button>*@
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+</section>
+<!-- /.content -->
+@*</div>*@
+
+
+
+<script src="~/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="~/plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- DataTables -->
+<script src="~/plugins/datatables/jquery.dataTables.js"></script>
+<script src="~/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- AdminLTE App -->
+<script src="~/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+    $(function () {
+        //$("#example1").DataTable();
+        //$('#example2').DataTable({
+        //    "paging": true,
+        //    "lengthChange": false,
+        //    "searching": true,
+        //    "ordering": true,
+        //    "info": true,
+        //    "autoWidth": false,
+        //});
+
+        $('#beneficiary-form').on('submit', function (e) {
+            e.preventDefault();
+            onSave();
+
+        });
+
+        $('#edit').click(function () { onEdit(); return false; });
+
+    });
+
+
+    function GetDropDownData() {
+        //var ddlCustomers = $("#city");
+        $.ajax({
+            type: "GET",
+            url: "/Admin/GetCities",
+            data: "{}",
+            success: function (data) {
+                var s = '<option value="">Please Select</option>';
+                for (var i = 0; i < data.length; i++) {
+                    s += '<option value="' + data[i].value + '">' + data[i].text + '</option>';
+                }
+                $("#city").html(s);
+            }
+        });
+    }
+
+    function onSave() {
+
+        var FirstName = $('#firstname').val().trim();
+        var FirstName = $('#lastname').val().trim();
+        var FirstName = $('#firstname').val().trim();
+        var FirstName = $('#firstname').val().trim();
+
+        var FirstName = $('#firstname').val().trim();
+
+        var dataModel = $('#beneficiary-form').serialize();
+
+        var model = { FirstName: FirstName, Location: "Detroit" };
+
+        //$('#beneficiary-form').on('submit', function (e) {
+        $.ajax({
+            url: "/Admin/AddBeneficiary", //this is the submit URL
+            type: 'POST', //or POST
+            data: $('#beneficiary-form').serialize(),
+            success: function (data) {
+                if (data.isError == true) {
+                    toastr.error(data.message);
+                }
+                else {
+                    toastr.success('Beneficiary added successfully.');
+
+                    $('#modal-lg').modal('hide');
+
+                  //  $('#beneficiary-form').reset()
+
+                    $("#example2").load("/admin/GetAll");
+
+                    //$.ajax({
+                    //    url: "/Admin/Index",
+                    //    method: "GET",
+                    //    success: function (response) {
+                    //        //$("#divMessages").html("");
+                    //        //$("#divMessages").html(response);
+                    //    }
+                    //});
+                }
+            },
+            error: function (data) {
+                toastr.error('Beneficiary not added.');
+            }
+        });
+        //});
+
+
+        //var ddlCustomers = $("#city");
+
+
+
+        //$.ajax({
+        //    type: "POST",
+        //    data: JSON.stringify(model),
+        //    url: url,
+        //    contentType: "application/json"
+        //}).done(function (res) {
+        //    $("#SomeDivToShowTheResult").html(res);
+        //});
+    }
+
+    function onEdit() {
+
+        var abc = $(this).attr('data-value');
+        $.ajax({
+            type: "GET",
+            url: "/Admin/GetBeneficiary/" + $(this).attr('data-value'),
+            data: "{}",
+            success: function (data) {
+                
+            }
+        });
+    }
+
+
+    $('#openModal').click(function () {
+
+
+        GetDropDownData();
+        $('#modal-lg').modal('show');
+    });
+
+</script>

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSquare.DMS.API", "KSquare.DMS\KSquare.DMS.API.csproj", "{0909C750-F304-4EE6-A525-FAD1CBED3D29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSquare.DMS.Services", "KSquare.DMS.Services\KSquare.DMS.Services.csproj", "{50764CC6-D060-48D9-831C-1AAF28B721D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSquare.DMS.Domain", "KSquare.DMS.Domain\KSquare.DMS.Domain.csproj", "{CEB71979-88D6-4490-A0CA-5281B714C34B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSquare.DMS.Repositories", "KSquare.DMS.Repositories\KSquare.DMS.Repositories.csproj", "{E1D30334-2217-44E4-A97E-D76D9813B78B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSquare.DMS.WebUI", "KSquare.DMS.WebUI\KSquare.DMS.WebUI.csproj", "{5407A09F-7A98-491A-AA63-9A484C7AFC3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSquare.DMS.Common", "KSquare.DMS.Common\KSquare.DMS.Common.csproj", "{C25DC5A9-46D3-40CA-8020-EFB765F84EF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0909C750-F304-4EE6-A525-FAD1CBED3D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0909C750-F304-4EE6-A525-FAD1CBED3D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0909C750-F304-4EE6-A525-FAD1CBED3D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0909C750-F304-4EE6-A525-FAD1CBED3D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50764CC6-D060-48D9-831C-1AAF28B721D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50764CC6-D060-48D9-831C-1AAF28B721D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50764CC6-D060-48D9-831C-1AAF28B721D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50764CC6-D060-48D9-831C-1AAF28B721D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB71979-88D6-4490-A0CA-5281B714C34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB71979-88D6-4490-A0CA-5281B714C34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB71979-88D6-4490-A0CA-5281B714C34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB71979-88D6-4490-A0CA-5281B714C34B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1D30334-2217-44E4-A97E-D76D9813B78B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1D30334-2217-44E4-A97E-D76D9813B78B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1D30334-2217-44E4-A97E-D76D9813B78B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1D30334-2217-44E4-A97E-D76D9813B78B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5407A09F-7A98-491A-AA63-9A484C7AFC3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5407A09F-7A98-491A-AA63-9A484C7AFC3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5407A09F-7A98-491A-AA63-9A484C7AFC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5407A09F-7A98-491A-AA63-9A484C7AFC3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C25DC5A9-46D3-40CA-8020-EFB765F84EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C25DC5A9-46D3-40CA-8020-EFB765F84EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C25DC5A9-46D3-40CA-8020-EFB765F84EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C25DC5A9-46D3-40CA-8020-EFB765F84EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBEB03EF-A6F6-4D1F-84F7-C320A54EAE6B}
+	EndGlobalSection
+EndGlobal
